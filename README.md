@@ -34,9 +34,8 @@ Two other changes from the original spec, based on real deliverability concerns:
 
 Both Groq and Tavily have free API keys — no paid infra needed to demo this on Upwork.
 
-## What changed in this version (Upwork-readiness pass)
+## What changed in this version 
 
-The API-only version worked but wasn't demo-able — nobody hires you off a `curl` command.
 This version adds the two things that actually move an Upwork proposal:
 
 - **`app_ui.py`** — a Streamlit demo you run with one command and screen-share live: type a
