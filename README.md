@@ -82,7 +82,7 @@ or run the included example script:
 python tests/test_example.py
 ```
 
-or, better for a portfolio demo, launch the UI:
+or, better for a  demo, launch the UI:
 
 ```bash
 streamlit run app_ui.py
@@ -90,9 +90,7 @@ streamlit run app_ui.py
 
 This opens a browser tab where you type a company name and URL, watch the pipeline run live,
 and can expand the hooks/research/review-feedback for each result. There's also a "Batch (CSV)"
-tab — try it with the included `sample_companies.csv`. **This is what to screen-record for
-your Upwork portfolio video**, not the raw API.
-
+tab — try it with the included `sample_companies.csv`. 
 ## API
 
 ### `POST /generate-email`
@@ -137,27 +135,7 @@ Removes a company from the ledger if you want to re-run it intentionally.
   in `.env`, default 10) so a runaway script or loop can't hammer your Groq/Tavily quota or,
   worse, blast a lead list unattended.
 
-## Portfolio framing (adjusted from the original)
 
-Instead of claiming a specific reply-rate improvement you haven't measured, describe what the
-system verifiably does — and show it, don't just describe it:
-
-> "A 5-agent pipeline that turns a company name (or a CSV of 50) into personalized,
-> fact-checked cold emails — live web research, hook extraction, drafting, and automatic
-> self-review against 5 quality gates, with built-in dedupe so no lead gets emailed twice."
-
-For the portfolio listing itself:
-1. Record a 60-90 second screen capture of `app_ui.py` running the single-company demo on a
-   company the viewer will recognize (Webflow, Notion, Stripe) — watching it happen live is
-   more convincing than any stat.
-2. Follow it with a 10-second clip of the batch tab processing `sample_companies.csv`, to show
-   it scales past a single lookup.
-3. State the actual per-lead time from `processing_time_seconds` you observed in your own
-   test run — a real number, even a modest one, outperforms an invented percentage.
-
-That's a demonstrable claim a client can watch happen on a call, which lands better than an
-unverifiable percentage — and it's also just true, which matters if a client ever asks you to
-prove it.
 
 ## File structure
 
