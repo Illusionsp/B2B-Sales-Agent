@@ -9,22 +9,6 @@ review-passed cold outreach email. Built around 5 cooperating agents:
 4. **Email Reviewer Agent** — grades the draft against 5 pass/fail criteria and rewrites it if it fails (up to 3 attempts)
 5. **Orchestrator** — chains the above and enforces guardrails (dedupe, rate limiting, real citations only)
 
-## Why this differs from the original prompt pack
-
-The original 5-prompt package assumed `{search_results}` would magically already exist.
-In practice an LLM can't browse Crunchbase or LinkedIn by itself, so this build wires in
-a **real web search step** (Tavily, free tier) before the Research Agent ever sees the company.
-That's the difference between a prompt package and something a client can actually run.
-
-Two other changes from the original spec, based on real deliverability concerns:
-
-- **No invented reply-rate stats.** The original portfolio copy claimed "8-12% reply rates" —
-  a number nobody can back up before running real campaigns. The orchestrator's output never
-  fabricates performance metrics; it only reports what it actually did (attempts, sources used).
-- **Dedupe + rate limiting.** A local SQLite ledger prevents the same company being emailed
-  twice and caps how many companies can be processed per run, so this can't accidentally be
-  used to spam a list.
-
 ## Stack
 
 - **FastAPI** — HTTP service, matches your existing stack
